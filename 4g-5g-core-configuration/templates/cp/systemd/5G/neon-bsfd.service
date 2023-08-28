@@ -1,0 +1,15 @@
+[Unit]
+Description=neon BSF Daemon
+Wants=mongodb.service mongod.service
+
+[Service]
+Type=simple
+
+Restart=always
+ExecStart=/usr/bin/neon-bsfd -c /etc/neon/bsf.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

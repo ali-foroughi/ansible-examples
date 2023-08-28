@@ -1,0 +1,15 @@
+[Unit]
+Description=Zcore AUSF Daemon
+After=networking.service
+
+[Service]
+Type=simple
+
+Restart=always
+ExecStart=/usr/bin/zcore-ausfd -c /etc/zcore/ausf.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

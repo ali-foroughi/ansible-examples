@@ -1,0 +1,11 @@
+hss_container_instances: 40  # change this
+mme_container_instances: 4
+#image_name: reg.zcore.local/zcore/zcore:1.0.0.0
+image_name: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+yaml_gen_dir: config-generator
+apt_proxy: "http://172.20.14.52:3142"
+http_proxy: "http://172.20.14.52:8888"
+docker_compose_file: "docker-compose.yaml"
+ips_file: vars/ips.yaml
+om_subnet: 10.30.10.0/16
+s11_subnet: 10.200.10.0/24

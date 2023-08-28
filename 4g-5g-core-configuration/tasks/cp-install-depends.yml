@@ -1,0 +1,100 @@
+---
+- name: check DNS configuration
+  ansible.builtin.command:
+    cmd: nslookup ubuntu.com
+  ignore_errors: false
+  when: check_dns == "true"
+
+- name: Create a directory for apt proxy
+  ansible.builtin.file:
+    path: /etc/apt/apt.conf.d/
+    state: directory
+    mode: '0744'
+  when: use_apt_http_proxy == "true"
+
+- name: Create a proxy file if it doesn't exist
+  ansible.builtin.file:
+    path: /etc/apt/apt.conf.d/10proxy
+    state: touch
+    mode: '644'
+  when: use_apt_http_proxy == "true"
+
+- name: Edit /etc/apt/apt.conf.d/10proxy and insert Zitel HTTP proxy's IP
+  ansible.builtin.lineinfile:
+    path: /etc/apt/apt.conf.d/10proxy
+    state: present
+    line: Acquire::http { Proxy "http://172.17.93.162:3142"; }
+  when: use_apt_http_proxy == "true"
+
+- name: Edit /etc/apt/apt.conf.d/10proxy and insert zitel HTTPS proxy's IP
+  ansible.builtin.lineinfile:
+    path: /etc/apt/apt.conf.d/10proxy
+    state: present
+    line: Acquire::https { Proxy "http://172.17.93.162:3142"; }
+  when: use_apt_http_proxy == "true"
+
+- name: apt-get update
+  ansible.builtin.apt:
+    update_cache: yes
+  ignore_errors: false
+  when: install_dependencies == "true"
+
+- name: Resolve package conflicts
+  ansible.builtin.apt:
+    upgrade: safe
+  when: install_dependencies == "true"
+
+- name: Install dependencies packages
+  ansible.builtin.apt:
+    name:
+      - libtins-dev
+      - meson
+      - cmake
+      - libyaml-dev
+      - libmongoc-dev
+      - flex
+      - bison
+      - libgcrypt-dev
+      - libidn11-dev
+      - libgnutls28-dev
+      - libnghttp2-dev
+      - libmicrohttpd-dev
+      - libcurl4-gnutls-dev
+      - clang
+      - libsctp-dev
+      - libnuma-dev
+      - libpcre2-dev
+      - git
+      - autoconf
+      - automake
+      - libtool
+      - make
+      - libreadline-dev
+      - texinfo
+      - libjson-c-dev
+      - pkg-config
+      - libc-ares-dev
+      - python3-dev
+      - python3-pytest
+      - python3-sphinx
+      - build-essential
+      - libsnmp-dev
+      - libcap-dev
+      - libelf-dev
+      - libunwind-dev
+      - libtalloc-dev
+      - libzmq3-dev
+      - freediameter
+      - libjansson-dev
+      - python3-pip
+      - python3-setuptools
+      - python3-wheel
+      - ninja-build
+      - libssl-dev
+      - libbson-dev
+  when: install_dependencies == "true"
+
+- name: Reboot & wait for the server to come back up
+  ansible.builtin.reboot:
+    reboot_timeout: 900
+  when: reboot_after_pkg_installation == "true"

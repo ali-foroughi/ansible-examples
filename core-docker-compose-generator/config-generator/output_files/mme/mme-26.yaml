@@ -1,0 +1,63 @@
+logger:
+    file: /root/zcore/install/var/log/open5gs/mme-26.log
+mme:
+    freeDiameter: /etc/freeDiameter/mme.conf
+    s1ap:
+      - addr: 10.30.10.20
+    gtpc:
+      - addr: 10.200.10.20
+    s10:
+      - addr: 10.30.10.20
+    gummei:
+        plmn_id:
+            mcc: 432
+            mnc: 45
+        mme_gid: 2
+        mme_code: '10'
+    tai:
+        plmn_id:
+            mcc: 432
+            mnc: 45
+        tac:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 100
+          - 101
+    security:
+        integrity_order:
+          - EIA2
+          - EIA1
+          - EIA0
+        ciphering_order:
+          - EEA0
+          - EEA1
+          - EEA2
+    network_name:
+        full: zcore
+    mme_name: mme-1
+    mgmt_request_path: tcp://172.20.9.13:6001
+    mgmt_response_path: tcp://172.20.9.13:6002
+s10:
+    gtpc:
+      - addr: 10.30.10.11
+        tac: 101
+sgwc:
+    gtpc:
+      - addr: 172.20.15.75
+smf:
+    gtpc:
+      - addr: 10.20.30.3
+parameter:
+max:
+pool:
+sockopt:
+sctp:
+time:

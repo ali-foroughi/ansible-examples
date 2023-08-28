@@ -1,0 +1,98 @@
+version: '3.3'
+services:
+{% for i in range(1, hss_container_instances + 1) %}
+  hss-{{ i }}:
+    image: {{ image_name }}
+    container_name: hss-{{ i }}
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-{{ i }}
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-{{ i }}:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-{{ i }}.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-{{ i }}.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-{{ i }}.localdomain/hss-{{ i }}.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-{{ i }}.localdomain/hss-{{ i }}.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-{{ i }}.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: {{ csv_data.list[i - 1].HSS_IP }}
+{% endfor %}
+
+{% for j in range(1, mme_container_instances + 1) %}
+
+  mme-{{ j }}:
+    image: {{ image_name }}
+    container_name: mme-{{ j }}
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=mme-{{ j }}
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    depends_on:
+      - hss-{{ j }}
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+      - "36412/sctp"
+      - "2123/udp"
+      - "6001/tcp"
+      - "6002/tcp"
+    volumes:
+      - /var/log/zcore/mme-{{ j }}:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/mme-{{ j }}.conf:/etc/freeDiameter/mme.conf
+      - /etc/zcore/docker/mme-{{ j }}.yaml:/root/zcore/install/etc/open5gs/mme.yaml
+      - ./mme/recovery_counter.txt:/etc/recovery_counter.txt
+      - /etc/freeDiameter/tls/mme-{{ j }}.localdomain/mme-{{ j }}.localdomain.crt:/root/zcore/install/etc/freeDiameter/mme.cert.pem
+      - /etc/freeDiameter/tls/mme-{{ j }}.localdomain/mme-{{ j }}.localdomain.key:/root/zcore/install/etc/freeDiameter/mme.key.pem
+      - /etc/freeDiameter/tls/mme-{{ j }}.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: {{ csv_data.list[j - 1].S1AP }}
+      s11:
+        ipv4_address: {{ csv_data.list[j - 1].S11 }}
+{% endfor %}
+networks:
+  om:
+    name: om
+    driver: bridge
+    driver_opts:
+      parent: ens8
+    ipam:
+      config:
+        - subnet: {{ om_subnet }}
+  s11:
+    name: s11
+    driver: bridge
+    ipam:
+      config:
+        - subnet: {{ s11_subnet }}
+

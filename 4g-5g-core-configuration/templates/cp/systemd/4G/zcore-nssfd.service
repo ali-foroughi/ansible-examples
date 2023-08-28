@@ -1,0 +1,15 @@
+[Unit]
+Description=Zcore NSSF Daemon
+After=networking.service
+
+[Service]
+Type=simple
+
+Restart=always
+ExecStart=/usr/bin/zcore-nssfd -c /etc/zcore/nssf.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

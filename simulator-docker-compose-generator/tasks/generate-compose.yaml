@@ -1,0 +1,5 @@
+- name: Generate Docker Compose file
+  template:
+    src: templates/docker-compose.j2
+    dest: "{{ docker_compose_file }}"
+  run_once: true

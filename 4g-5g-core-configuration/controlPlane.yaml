@@ -1,0 +1,34 @@
+- name: Control plane configuration
+  hosts: cp
+  gather_facts: yes
+  vars_files:
+    - vars/main.yaml
+  tasks:
+    - name: Install build dependencies
+      import_tasks: tasks/cp-install-depends.yml
+
+      vars:
+        is_4g: "false"
+        check_dns: "false"
+        install_dependencies: "true"
+        use_apt_http_proxy: "true"
+        reboot_after_pkg_installation: "true"
+
+    - name: Build, deploy and configure zcore/neon
+      import_tasks: tasks/cp-build.yml
+
+      vars:
+        is_4g: "false"
+        build_core: "true"
+        copy_binaries_after_build: "false"
+        backup_old_binaries: "false"
+        create_and_copy_config_files: "false"
+
+    - name: Configure & start services
+      import_tasks: tasks/cp-services.yml
+
+      vars:
+        create_service_files: "true"
+        is_4g: "false"
+        start_services: "true"
+        stop_services: "false"

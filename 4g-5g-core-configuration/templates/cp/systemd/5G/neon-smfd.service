@@ -1,0 +1,16 @@
+[Unit]
+Description=neon SMF Daemon
+After=networking.service
+Requires=systemd-networkd.service
+
+[Service]
+Type=simple
+
+Restart=always
+ExecStart=/usr/bin/neon-smfd -c /etc/neon/smf.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

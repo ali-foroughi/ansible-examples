@@ -1,0 +1,63 @@
+logger:
+    file: {{ default_core_log_dir_5g }}/smf.log
+
+tls:
+    enabled: {{ tls.enabled }}
+    server:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/smf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/smf.crt
+    client:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/smf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/smf.crt
+
+smf:
+    sbi:
+      - addr: {{ smf.sbi }}
+        port: 7777
+    pfcp:
+      - addr: {{ smf.pfcp }}
+        #      - addr: ::1
+    gtpc:
+      - addr: {{ smf.gtpc }}
+        #      - addr: ::1
+    gtpu:
+      - addr: {{ smf.gtpu }}
+        #      - addr: ::1
+    metrics:
+      - addr: {{ smf.metrics }}
+        port: 9090
+
+    subnet:
+      - addr: {{ smf.subnet }}
+        dnn: {{ smf.dnn }}
+    dns:
+      - {{ dns.ns1 }}
+      - {{ dns.ns2 }}
+    mtu: 1500
+    ctf:
+      enabled: auto
+
+    freeDiameter: {{ default_freediameter_dir }}/smf.conf
+
+#nrf:
+#    sbi:
+#      - addr:
+#          - {{ nrf.sbi }}
+#        port: 7777
+
+scp:
+    sbi:
+      - addr: {{ scp.sbi }}
+        port: 7777
+upf:
+    pfcp:
+      - addr: {{ upf.pfcp }}
+
+parameter:
+max:
+  ue: {{ max.ue }}
+  peer: {{ max.peer }}
+pool:
+time:

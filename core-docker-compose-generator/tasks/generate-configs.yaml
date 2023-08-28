@@ -1,0 +1,66 @@
+- name: Install dependencies packages
+  ansible.builtin.apt:
+    name:
+      - python3-venv
+  environment:
+    http_proxy: "{{ apt_proxy }}"
+    https_proxy: "{{ apt_proxy }}"
+  ignore_errors: false
+
+- name: create virtualenv
+  ansible.builtin.command:
+    cmd: python3 -m venv "{{ yaml_gen_dir }}/env"
+  ignore_errors: false
+
+- name: Install pip packages in the venv
+  ansible.builtin.pip:
+    requirements: "requirements.txt"
+  args:
+    chdir: "{{ yaml_gen_dir }}"
+  environment:
+    http_proxy: "{{ http_proxy }}"
+    https_proxy: "{{ http_proxy }}"
+  ignore_errors: false
+
+- name: Start config file generation
+  ansible.builtin.command:
+    cmd: "python3 main.py {{ csv_file }}"
+  args:
+    chdir: "{{ yaml_gen_dir }}/"
+  ignore_errors: false
+
+- name: Create /etc/freeDiameter
+  ansible.builtin.file:
+    path: /etc/freeDiameter
+    state: directory
+    mode: '0755'
+
+- name: Create /etc/zcore/docker
+  ansible.builtin.file:
+    path: /etc/zcore/docker
+    state: directory
+    mode: '0755'
+
+- name: Copy config files to /etc/zcore/docker
+  ansible.builtin.copy:
+    src: "{{ yaml_gen_dir }}/output_files/mme/"
+    dest: /etc/zcore/docker
+  ignore_errors: false
+
+- name: Copy config files to /etc/zcore/docker
+  ansible.builtin.copy:
+    src: "{{ yaml_gen_dir }}/output_files/hss/"
+    dest: /etc/zcore/docker
+  ignore_errors: false
+
+- name: Copy config files to /etc/freeDiameter
+  ansible.builtin.copy:
+    src: "{{ yaml_gen_dir }}/output_files/freediameter/"
+    dest: /etc/freeDiameter
+  ignore_errors: false
+
+- name: Copy config files to /etc/freeDiameter/tls
+  ansible.builtin.copy:
+    src: "{{ yaml_gen_dir }}/output_files/tls"
+    dest: /etc/freeDiameter
+  ignore_errors: false

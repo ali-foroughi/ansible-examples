@@ -1,0 +1,15 @@
+[Unit]
+Description=Zcore AMF Daemon
+After=networking.service
+
+[Service]
+Type=simple
+LimitNOFILE=65535
+Restart=always
+ExecStart=/usr/bin/zcore-amfd -c /etc/zcore/amf.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

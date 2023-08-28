@@ -1,0 +1,95 @@
+---
+# tasks file for build
+
+- name: Build project with build_with_dpdk.sh
+  ansible.builtin.shell:
+    chdir: "{{ default_build_dir }}"
+    cmd: git checkout neon_core && bash build_with_dpdk.sh > build_output.txt
+  ignore_errors: false
+  when: build_dpdk == "true"
+
+- name: copy the binaries to /usr/bin
+  ansible.builtin.copy:
+    src: "{{ default_build_dir }}/install/bin/"
+    dest: "{{ default_binaries_dir }}"
+    remote_src: true
+  when: build_dpdk == "true"
+  ignore_errors: false
+
+
+# tasks for configuration
+
+- name: Create directory for config files
+  ansible.builtin.file:
+    path: "{{ default_dp_configs_dir }}"
+    state: directory
+    mode: '0755'
+  ignore_errors: false
+  when: create_dp_config_files == "true"
+
+- name: Copy freeDiameter to /etc/freeDiameter
+  ansible.builtin.copy:
+    src: "{{ default_build_dir }}/install/etc/freeDiameter"
+    dest: /etc
+    remote_src: true
+  ignore_errors: false
+  when: create_dp_config_files == "true"
+
+- name: copy spgw_config.json to /etc
+  ansible.builtin.template:
+    src: "{{ yaml_files_dir_dp }}/spgw_config.json.j2"
+    dest: /etc/spgw_config.json
+    owner: root
+    group: root
+    mode: '0644'
+  ignore_errors: false
+  when: configure_spgw_config == "true"
+
+- name: copy YAML files to /etc/zcore
+  ansible.builtin.template:
+    src: "{{ item }}"
+    dest: "{{ default_dp_configs_dir }}/{{ item | basename | regex_replace('\\.j2$', '') }}"
+    owner: root
+    group: root
+    mode: '0644'
+  with_fileglob:
+    - "{{ yaml_files_dir_dp }}/*.yaml.j2"
+  when: create_dp_config_files == "true"
+
+- name: copy systemd files to /etc/systemd/system
+  ansible.builtin.copy:
+    src: "{{ systemd_files_dir_dp }}/systemd/"
+    dest: /etc/systemd/system
+  ignore_errors: false
+  when: create_dp_config_files == "true"
+
+- name: Copy ldconfig file to /etc/ld.so.conf.d/dpdk.conf
+  ansible.builtin.copy:
+    src: "{{ yaml_files_dir_dp }}/dpdk.conf"
+    dest: /etc/ld.so.conf.d/dpdk.conf
+  ignore_errors: false
+  when: create_dp_config_files == "true"
+
+- name: Execute ldconfig
+  ansible.builtin.command:
+    cmd: ldconfig
+  ignore_errors: false
+  
+
+- name: starting rxtx service
+  ansible.builtin.systemd:
+    daemon_reload: true
+    enabled: true
+    name: rxtx
+    state: started
+  ignore_errors: false
+  when: start_services == "true"
+
+- name: starting UPF
+  ansible.builtin.systemd:
+    daemon_reload: true
+    enabled: true
+    name: upf_spgw1
+    state: started
+  ignore_errors: false
+  when: start_services == "true"

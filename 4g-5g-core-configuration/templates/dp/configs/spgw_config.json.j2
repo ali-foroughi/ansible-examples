@@ -1,0 +1,28 @@
+{
+	"arp_cleanup_timer" : 300,
+	"dpdk_script" : "/root/zcore/install/dpdk/bin/dpdk-devbind.py",
+	"spgw_list" : [ 
+	  {
+		"is_4g" : {{ is_4g }},
+		"spgw_name" : "{{ spgw_name }}",
+		"uplink": [{
+			"linux_name": "{{ ul_if_name }}",
+			"pci_number": "{{ ul_if_pci }}",
+			"socket": 0,
+			"rx_queue_count": 2,
+			"ipv4": "{{ ul_if_ip }}",
+			"mask" : "{{ ul_if_mask }}",
+			"gateway_mac" : "{{ ul_if_gw_mac }}"
+		}],
+		"downlink": [{
+			"linux_name": "{{ dl_if_name }}",
+			"pci_number": "{{ dl_if_pci }}",
+			"socket": 0,
+			"rx_queue_count": 2,
+			"ipv4": "{{ dl_if_ip }}",
+			"mask" : "{{ dl_if_mask }}",
+			"gateway_mac" : "{{ dl_if_gw_mac }}"
+		}]
+	  }
+	]
+}

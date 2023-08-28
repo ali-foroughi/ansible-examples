@@ -1,0 +1,19 @@
+[Unit]
+Description=rxtx Service
+#Requires=upf_spgw1.service
+#After=rxtx.service
+#BindsTo=rxtx.service
+#PartOf=rxtx.service
+
+[Service]
+Type=simple
+LimitCORE=infinity
+Restart=always
+RestartSec=5s
+ExecStart=/usr/bin/zcore-upfd-rxtx -c /etc/zcore/rxtx.yaml
+StandardOutput=file:/var/log/zcore/rxtx.log
+StandardError=file:/dev/null
+#ExecStop=/opt/myapp/B_service.sh -a stop
+[Install]
+WantedBy=multi-user.target
+

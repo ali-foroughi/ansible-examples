@@ -1,0 +1,38 @@
+db_uri: mongodb://{{ mongodb.addr }}/{{ mongodb.db }}
+
+logger:
+    file: {{ default_core_log_dir_5g }}/pcf.log
+
+tls:
+    enabled: {{ tls.enabled }}
+    server:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/pcf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/pcf.crt
+    client:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/pcf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/pcf.crt
+
+pcf:
+    sbi:
+      - addr: {{ pcf.sbi }}
+        port: 7777
+
+#nrf:
+#    sbi:
+#      - addr:
+#          - {{ nrf.sbi }}
+#        port: 7777
+
+scp:
+    sbi:
+      - addr: {{ scp.sbi }}
+        port: 7777
+
+parameter:
+max:
+  ue: {{ max.ue }}
+  peer: {{ max.peer }}
+pool:
+time:

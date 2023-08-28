@@ -1,0 +1,16 @@
+Identity = "{{ HSS_NAME }}.localdomain";
+Realm = "localdomain";
+ListenOn = "{{ HSS_IP }}";
+ThreadsPerServer = 40;
+TLS_Cred = "/root/zcore/install/etc/freeDiameter/hss.cert.pem", "/root/zcore/install/etc/freeDiameter/hss.key.pem";
+TLS_CA = "/root/zcore/install/etc/freeDiameter/cacert.pem";
+NoRelay;
+LoadExtension = "/root/zcore/install/lib/x86_64-linux-gnu/freeDiameter/dbg_msg_dumps.fdx" : "0x8888";
+LoadExtension = "/root/zcore/install/lib/x86_64-linux-gnu/freeDiameter/dict_rfc5777.fdx";
+LoadExtension = "/root/zcore/install/lib/x86_64-linux-gnu/freeDiameter/dict_mip6i.fdx";
+LoadExtension = "/root/zcore/install/lib/x86_64-linux-gnu/freeDiameter/dict_nasreq.fdx";
+LoadExtension = "/root/zcore/install/lib/x86_64-linux-gnu/freeDiameter/dict_nas_mipv6.fdx";
+LoadExtension = "/root/zcore/install/lib/x86_64-linux-gnu/freeDiameter/dict_dcca.fdx";
+LoadExtension = "/root/zcore/install/lib/x86_64-linux-gnu/freeDiameter/dict_dcca_3gpp.fdx";
+
+{{ CONNECT_PEER_LINES }}

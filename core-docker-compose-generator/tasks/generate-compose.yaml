@@ -1,0 +1,16 @@
+#- name: Read CSV data
+#  set_fact:
+#    csv_data: "{{ lookup('csvfile', '/opt/zcore-docker/ansible/config-generator/test-mme.csv delimiter=,') }}"
+
+- name: Generate Docker Compose file
+  template:
+    src: templates/docker-compose.j2
+    dest: "{{ docker_compose_file }}"
+  run_once: true
+
+- name: Copy docker compose to the parent directory
+  ansible.builtin.copy:
+    src: "{{ docker_compose_file }}"
+    dest: ../docker-compose.yaml
+    remote_src: true
+  ignore_errors: false

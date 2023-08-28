@@ -1,0 +1,6612 @@
+version: '3.3'
+services:
+  sim1:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim1
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=1
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990000
+      - TUN_ID=1
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim1:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim2:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim2
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=2
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990100
+      - TUN_ID=2
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim2:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim3:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim3
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=3
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990200
+      - TUN_ID=3
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim3:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim4:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim4
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=4
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990300
+      - TUN_ID=4
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim4:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim5:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim5
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=5
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990400
+      - TUN_ID=5
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim5:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim6:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim6
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=6
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990500
+      - TUN_ID=6
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim6:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim7:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim7
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=7
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990600
+      - TUN_ID=7
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim7:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim8:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim8
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=8
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990700
+      - TUN_ID=8
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim8:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim9:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim9
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=9
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990800
+      - TUN_ID=9
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim9:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim10:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim10
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=10
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999990900
+      - TUN_ID=10
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim10:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim11:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim11
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=11
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991000
+      - TUN_ID=11
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim11:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim12:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim12
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=12
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991100
+      - TUN_ID=12
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim12:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim13:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim13
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=13
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991200
+      - TUN_ID=13
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim13:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim14:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim14
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=14
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991300
+      - TUN_ID=14
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim14:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim15:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim15
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=15
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991400
+      - TUN_ID=15
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim15:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim16:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim16
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=16
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991500
+      - TUN_ID=16
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim16:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim17:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim17
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=17
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991600
+      - TUN_ID=17
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim17:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim18:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim18
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=18
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991700
+      - TUN_ID=18
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim18:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim19:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim19
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=19
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991800
+      - TUN_ID=19
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim19:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim20:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim20
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=20
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999991900
+      - TUN_ID=20
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim20:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim21:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim21
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=21
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992000
+      - TUN_ID=21
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim21:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim22:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim22
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=22
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992100
+      - TUN_ID=22
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim22:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim23:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim23
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=23
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992200
+      - TUN_ID=23
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim23:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim24:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim24
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=24
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992300
+      - TUN_ID=24
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim24:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim25:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim25
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=25
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992400
+      - TUN_ID=25
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim25:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim26:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim26
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=26
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992500
+      - TUN_ID=26
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim26:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim27:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim27
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=27
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992600
+      - TUN_ID=27
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim27:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim28:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim28
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=28
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992700
+      - TUN_ID=28
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim28:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim29:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim29
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=29
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992800
+      - TUN_ID=29
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim29:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim30:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim30
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=30
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999992900
+      - TUN_ID=30
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim30:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim31:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim31
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=31
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993000
+      - TUN_ID=31
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim31:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim32:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim32
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=32
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993100
+      - TUN_ID=32
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim32:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim33:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim33
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=33
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993200
+      - TUN_ID=33
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim33:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim34:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim34
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=34
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993300
+      - TUN_ID=34
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim34:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim35:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim35
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=35
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993400
+      - TUN_ID=35
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim35:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim36:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim36
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=36
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993500
+      - TUN_ID=36
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim36:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim37:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim37
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=37
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993600
+      - TUN_ID=37
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim37:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim38:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim38
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=38
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993700
+      - TUN_ID=38
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim38:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim39:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim39
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=39
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993800
+      - TUN_ID=39
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim39:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim40:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim40
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=40
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999993900
+      - TUN_ID=40
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim40:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim41:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim41
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=41
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994000
+      - TUN_ID=41
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim41:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim42:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim42
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=42
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994100
+      - TUN_ID=42
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim42:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim43:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim43
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=43
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994200
+      - TUN_ID=43
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim43:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim44:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim44
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=44
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994300
+      - TUN_ID=44
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim44:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim45:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim45
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=45
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994400
+      - TUN_ID=45
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim45:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim46:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim46
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=46
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994500
+      - TUN_ID=46
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim46:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim47:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim47
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=47
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994600
+      - TUN_ID=47
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim47:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim48:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim48
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=48
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994700
+      - TUN_ID=48
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim48:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim49:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim49
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=49
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994800
+      - TUN_ID=49
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim49:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim50:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim50
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=50
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999994900
+      - TUN_ID=50
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim50:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim51:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim51
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=51
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995000
+      - TUN_ID=51
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim51:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim52:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim52
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=52
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995100
+      - TUN_ID=52
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim52:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim53:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim53
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=53
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995200
+      - TUN_ID=53
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim53:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim54:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim54
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=54
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995300
+      - TUN_ID=54
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim54:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim55:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim55
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=55
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995400
+      - TUN_ID=55
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim55:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim56:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim56
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=56
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995500
+      - TUN_ID=56
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim56:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim57:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim57
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=57
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995600
+      - TUN_ID=57
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim57:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim58:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim58
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=58
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995700
+      - TUN_ID=58
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim58:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim59:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim59
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=59
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995800
+      - TUN_ID=59
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim59:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim60:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim60
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=60
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999995900
+      - TUN_ID=60
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim60:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim61:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim61
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=61
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996000
+      - TUN_ID=61
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim61:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim62:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim62
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=62
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996100
+      - TUN_ID=62
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim62:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim63:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim63
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=63
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996200
+      - TUN_ID=63
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim63:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim64:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim64
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=64
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996300
+      - TUN_ID=64
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim64:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim65:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim65
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=65
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996400
+      - TUN_ID=65
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim65:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim66:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim66
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=66
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996500
+      - TUN_ID=66
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim66:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim67:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim67
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=67
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996600
+      - TUN_ID=67
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim67:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim68:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim68
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=68
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996700
+      - TUN_ID=68
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim68:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim69:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim69
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=69
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996800
+      - TUN_ID=69
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim69:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim70:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim70
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=70
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999996900
+      - TUN_ID=70
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim70:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim71:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim71
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=71
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997000
+      - TUN_ID=71
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim71:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim72:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim72
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=72
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997100
+      - TUN_ID=72
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim72:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim73:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim73
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=73
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997200
+      - TUN_ID=73
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim73:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim74:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim74
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=74
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997300
+      - TUN_ID=74
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim74:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim75:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim75
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=75
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997400
+      - TUN_ID=75
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim75:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim76:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim76
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=76
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997500
+      - TUN_ID=76
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim76:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim77:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim77
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=77
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997600
+      - TUN_ID=77
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim77:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim78:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim78
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=78
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997700
+      - TUN_ID=78
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim78:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim79:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim79
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=79
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997800
+      - TUN_ID=79
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim79:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim80:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim80
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=80
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999997900
+      - TUN_ID=80
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim80:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim81:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim81
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=81
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998000
+      - TUN_ID=81
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim81:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim82:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim82
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=82
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998100
+      - TUN_ID=82
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim82:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim83:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim83
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=83
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998200
+      - TUN_ID=83
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim83:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim84:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim84
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=84
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998300
+      - TUN_ID=84
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim84:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim85:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim85
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=85
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998400
+      - TUN_ID=85
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim85:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim86:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim86
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=86
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998500
+      - TUN_ID=86
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim86:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim87:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim87
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=87
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998600
+      - TUN_ID=87
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim87:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim88:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim88
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=88
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998700
+      - TUN_ID=88
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim88:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim89:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim89
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=89
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998800
+      - TUN_ID=89
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim89:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim90:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim90
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=90
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999998900
+      - TUN_ID=90
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim90:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim91:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim91
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=91
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999000
+      - TUN_ID=91
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim91:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim92:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim92
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=92
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999100
+      - TUN_ID=92
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim92:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim93:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim93
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=93
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999200
+      - TUN_ID=93
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim93:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim94:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim94
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=94
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999300
+      - TUN_ID=94
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim94:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim95:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim95
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=95
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999400
+      - TUN_ID=95
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim95:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim96:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim96
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=96
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999500
+      - TUN_ID=96
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim96:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim97:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim97
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=97
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999600
+      - TUN_ID=97
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim97:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim98:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim98
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=98
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999700
+      - TUN_ID=98
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim98:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim99:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim99
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=99
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999800
+      - TUN_ID=99
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim99:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim100:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim100
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=100
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466039999999900
+      - TUN_ID=100
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim100:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim101:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim101
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=101
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000000
+      - TUN_ID=101
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim101:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim102:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim102
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=102
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000100
+      - TUN_ID=102
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim102:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim103:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim103
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=103
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000200
+      - TUN_ID=103
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim103:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim104:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim104
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=104
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000300
+      - TUN_ID=104
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim104:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim105:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim105
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=105
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000400
+      - TUN_ID=105
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim105:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim106:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim106
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=106
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000500
+      - TUN_ID=106
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim106:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim107:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim107
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=107
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000600
+      - TUN_ID=107
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim107:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim108:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim108
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=108
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000700
+      - TUN_ID=108
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim108:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim109:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim109
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=109
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000800
+      - TUN_ID=109
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim109:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim110:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim110
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=110
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000000900
+      - TUN_ID=110
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim110:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim111:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim111
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=111
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001000
+      - TUN_ID=111
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim111:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim112:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim112
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=112
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001100
+      - TUN_ID=112
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim112:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim113:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim113
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=113
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001200
+      - TUN_ID=113
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim113:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim114:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim114
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=114
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001300
+      - TUN_ID=114
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim114:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim115:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim115
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=115
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001400
+      - TUN_ID=115
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim115:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim116:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim116
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=116
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001500
+      - TUN_ID=116
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim116:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim117:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim117
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=117
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001600
+      - TUN_ID=117
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim117:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim118:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim118
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=118
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001700
+      - TUN_ID=118
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim118:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim119:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim119
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=119
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001800
+      - TUN_ID=119
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim119:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim120:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim120
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=120
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000001900
+      - TUN_ID=120
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim120:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim121:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim121
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=121
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002000
+      - TUN_ID=121
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim121:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim122:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim122
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=122
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002100
+      - TUN_ID=122
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim122:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim123:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim123
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=123
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002200
+      - TUN_ID=123
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim123:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim124:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim124
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=124
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002300
+      - TUN_ID=124
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim124:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim125:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim125
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=125
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002400
+      - TUN_ID=125
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim125:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim126:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim126
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=126
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002500
+      - TUN_ID=126
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim126:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim127:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim127
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=127
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002600
+      - TUN_ID=127
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim127:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim128:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim128
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=128
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002700
+      - TUN_ID=128
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim128:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim129:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim129
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=129
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002800
+      - TUN_ID=129
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim129:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim130:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim130
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=130
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000002900
+      - TUN_ID=130
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim130:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim131:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim131
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=131
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003000
+      - TUN_ID=131
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim131:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim132:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim132
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=132
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003100
+      - TUN_ID=132
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim132:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim133:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim133
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=133
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003200
+      - TUN_ID=133
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim133:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim134:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim134
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=134
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003300
+      - TUN_ID=134
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim134:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim135:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim135
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=135
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003400
+      - TUN_ID=135
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim135:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim136:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim136
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=136
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003500
+      - TUN_ID=136
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim136:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim137:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim137
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=137
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003600
+      - TUN_ID=137
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim137:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim138:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim138
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=138
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003700
+      - TUN_ID=138
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim138:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim139:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim139
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=139
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003800
+      - TUN_ID=139
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim139:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim140:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim140
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=140
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000003900
+      - TUN_ID=140
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim140:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim141:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim141
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=141
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004000
+      - TUN_ID=141
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim141:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim142:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim142
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=142
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004100
+      - TUN_ID=142
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim142:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim143:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim143
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=143
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004200
+      - TUN_ID=143
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim143:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim144:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim144
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=144
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004300
+      - TUN_ID=144
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim144:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim145:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim145
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=145
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004400
+      - TUN_ID=145
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim145:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim146:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim146
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=146
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004500
+      - TUN_ID=146
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim146:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim147:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim147
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=147
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004600
+      - TUN_ID=147
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim147:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim148:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim148
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=148
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004700
+      - TUN_ID=148
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim148:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim149:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim149
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=149
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004800
+      - TUN_ID=149
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim149:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim150:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim150
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=150
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000004900
+      - TUN_ID=150
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim150:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim151:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim151
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=151
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005000
+      - TUN_ID=151
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim151:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim152:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim152
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=152
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005100
+      - TUN_ID=152
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim152:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim153:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim153
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=153
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005200
+      - TUN_ID=153
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim153:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim154:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim154
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=154
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005300
+      - TUN_ID=154
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim154:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim155:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim155
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=155
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005400
+      - TUN_ID=155
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim155:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim156:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim156
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=156
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005500
+      - TUN_ID=156
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim156:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim157:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim157
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=157
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005600
+      - TUN_ID=157
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim157:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim158:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim158
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=158
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005700
+      - TUN_ID=158
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim158:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim159:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim159
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=159
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005800
+      - TUN_ID=159
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim159:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim160:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim160
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=160
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000005900
+      - TUN_ID=160
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim160:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim161:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim161
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=161
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006000
+      - TUN_ID=161
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim161:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim162:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim162
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=162
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006100
+      - TUN_ID=162
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim162:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim163:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim163
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=163
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006200
+      - TUN_ID=163
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim163:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim164:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim164
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=164
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006300
+      - TUN_ID=164
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim164:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim165:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim165
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=165
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006400
+      - TUN_ID=165
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim165:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim166:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim166
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=166
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006500
+      - TUN_ID=166
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim166:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim167:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim167
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=167
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006600
+      - TUN_ID=167
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim167:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim168:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim168
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=168
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006700
+      - TUN_ID=168
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim168:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim169:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim169
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=169
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006800
+      - TUN_ID=169
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim169:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim170:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim170
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=170
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000006900
+      - TUN_ID=170
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim170:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim171:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim171
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=171
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007000
+      - TUN_ID=171
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim171:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim172:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim172
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=172
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007100
+      - TUN_ID=172
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim172:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim173:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim173
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=173
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007200
+      - TUN_ID=173
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim173:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim174:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim174
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=174
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007300
+      - TUN_ID=174
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim174:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim175:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim175
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=175
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007400
+      - TUN_ID=175
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim175:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim176:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim176
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=176
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007500
+      - TUN_ID=176
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim176:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim177:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim177
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=177
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007600
+      - TUN_ID=177
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim177:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim178:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim178
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=178
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007700
+      - TUN_ID=178
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim178:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim179:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim179
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=179
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007800
+      - TUN_ID=179
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim179:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim180:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim180
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=180
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000007900
+      - TUN_ID=180
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim180:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim181:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim181
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=181
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008000
+      - TUN_ID=181
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim181:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim182:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim182
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=182
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008100
+      - TUN_ID=182
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim182:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim183:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim183
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=183
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008200
+      - TUN_ID=183
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim183:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim184:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim184
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=184
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008300
+      - TUN_ID=184
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim184:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim185:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim185
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=185
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008400
+      - TUN_ID=185
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim185:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim186:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim186
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=186
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008500
+      - TUN_ID=186
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim186:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim187:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim187
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=187
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008600
+      - TUN_ID=187
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim187:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim188:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim188
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=188
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008700
+      - TUN_ID=188
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim188:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim189:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim189
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=189
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008800
+      - TUN_ID=189
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim189:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim190:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim190
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=190
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000008900
+      - TUN_ID=190
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim190:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim191:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim191
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=191
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009000
+      - TUN_ID=191
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim191:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim192:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim192
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=192
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009100
+      - TUN_ID=192
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim192:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim193:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim193
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=193
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009200
+      - TUN_ID=193
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim193:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim194:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim194
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=194
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009300
+      - TUN_ID=194
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim194:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim195:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim195
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=195
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009400
+      - TUN_ID=195
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim195:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim196:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim196
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=196
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009500
+      - TUN_ID=196
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim196:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim197:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim197
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=197
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009600
+      - TUN_ID=197
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim197:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim198:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim198
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=198
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009700
+      - TUN_ID=198
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim198:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim199:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim199
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=199
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009800
+      - TUN_ID=199
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim199:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+  sim200:
+    image: reg.zcore.local/4g-simulator/4g-simulator:1.4
+    container_name: sim200
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN=srv18
+      - START_INDEX=1
+      - END_INDEX=100
+      - ENB_ID=200
+      - ENB_IP=172.17.92.7
+      - MME_IP=172.17.93.48
+      - KI=fc29d6788bd254f621a4fb301c06bf5d63536a
+      - OPC=03f3dd89bfbd7abb5d3fbab0ba
+      - TAC_1=1
+      - ENB_NAME=TEST7113
+      - IMSI_PREFIX=466040000009900
+      - TUN_ID=200
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim200:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+
+networks:
+  om:
+    name: om
+    driver: bridge
+    driver_opts:
+      parent: ens8
+    ipam:
+      config:
+        - subnet: 10.30.10.0/16

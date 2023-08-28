@@ -1,0 +1,15 @@
+[Unit]
+Description=neon NRF Daemon
+Wants=mongodb.service mongod.service
+
+[Service]
+Type=simple
+
+Restart=always
+ExecStart=/usr/bin/neon-nrfd -c /etc/neon/nrf.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

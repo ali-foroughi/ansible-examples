@@ -1,0 +1,40 @@
+logger:
+    file: {{ default_core_log_dir_5g }}/nssf.log
+
+tls:
+    enabled: {{ tls.enabled }}
+    server:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/nssf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/nssf.crt
+    client:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/nssf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/nssf.crt
+
+nssf:
+    sbi:
+      - addr: {{ nssf.sbi }}
+        port: 7777
+    nsi:
+      - addr: {{ nssf.nsi }}
+        port: 7777
+        s_nssai:
+          sst: 1
+#nrf:
+#    sbi:
+#      - addr:
+#          - {{ nrf.sbi }}
+#       port: 7777
+
+scp:
+    sbi:
+      - addr: {{ scp.sbi }}
+        port: 7777
+
+parameter:
+max:
+  ue: {{ max.ue }}
+  peer: {{ max.peer }}
+pool:
+time:

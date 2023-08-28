@@ -1,0 +1,1471 @@
+version: '3.3'
+services:
+  hss-1:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-1
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-1
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-1:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-1.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-1.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-1.localdomain/hss-1.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-1.localdomain/hss-1.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-1.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.11
+  hss-2:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-2
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-2
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-2:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-2.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-2.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-2.localdomain/hss-2.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-2.localdomain/hss-2.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-2.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.12
+  hss-3:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-3
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-3
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-3:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-3.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-3.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-3.localdomain/hss-3.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-3.localdomain/hss-3.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-3.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.13
+  hss-4:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-4
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-4
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-4:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-4.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-4.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-4.localdomain/hss-4.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-4.localdomain/hss-4.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-4.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.14
+  hss-5:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-5
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-5
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-5:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-5.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-5.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-5.localdomain/hss-5.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-5.localdomain/hss-5.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-5.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.15
+  hss-6:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-6
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-6
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-6:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-6.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-6.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-6.localdomain/hss-6.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-6.localdomain/hss-6.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-6.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.16
+  hss-7:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-7
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-7
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-7:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-7.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-7.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-7.localdomain/hss-7.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-7.localdomain/hss-7.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-7.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.17
+  hss-8:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-8
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-8
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-8:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-8.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-8.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-8.localdomain/hss-8.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-8.localdomain/hss-8.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-8.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.18
+  hss-9:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-9
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-9
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-9:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-9.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-9.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-9.localdomain/hss-9.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-9.localdomain/hss-9.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-9.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.19
+  hss-10:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-10
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-10
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-10:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-10.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-10.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-10.localdomain/hss-10.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-10.localdomain/hss-10.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-10.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.20
+  hss-11:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-11
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-11
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-11:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-11.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-11.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-11.localdomain/hss-11.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-11.localdomain/hss-11.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-11.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.21
+  hss-12:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-12
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-12
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-12:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-12.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-12.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-12.localdomain/hss-12.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-12.localdomain/hss-12.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-12.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.22
+  hss-13:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-13
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-13
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-13:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-13.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-13.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-13.localdomain/hss-13.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-13.localdomain/hss-13.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-13.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.23
+  hss-14:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-14
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-14
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-14:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-14.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-14.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-14.localdomain/hss-14.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-14.localdomain/hss-14.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-14.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.24
+  hss-15:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-15
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-15
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-15:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-15.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-15.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-15.localdomain/hss-15.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-15.localdomain/hss-15.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-15.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.25
+  hss-16:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-16
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-16
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-16:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-16.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-16.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-16.localdomain/hss-16.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-16.localdomain/hss-16.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-16.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.26
+  hss-17:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-17
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-17
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-17:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-17.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-17.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-17.localdomain/hss-17.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-17.localdomain/hss-17.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-17.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.27
+  hss-18:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-18
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-18
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-18:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-18.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-18.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-18.localdomain/hss-18.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-18.localdomain/hss-18.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-18.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.28
+  hss-19:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-19
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-19
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-19:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-19.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-19.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-19.localdomain/hss-19.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-19.localdomain/hss-19.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-19.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.29
+  hss-20:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-20
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-20
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-20:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-20.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-20.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-20.localdomain/hss-20.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-20.localdomain/hss-20.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-20.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.30
+  hss-21:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-21
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-21
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-21:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-21.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-21.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-21.localdomain/hss-21.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-21.localdomain/hss-21.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-21.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.31
+  hss-22:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-22
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-22
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-22:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-22.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-22.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-22.localdomain/hss-22.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-22.localdomain/hss-22.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-22.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.32
+  hss-23:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-23
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-23
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-23:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-23.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-23.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-23.localdomain/hss-23.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-23.localdomain/hss-23.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-23.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.33
+  hss-24:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-24
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-24
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-24:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-24.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-24.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-24.localdomain/hss-24.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-24.localdomain/hss-24.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-24.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.34
+  hss-25:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-25
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-25
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-25:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-25.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-25.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-25.localdomain/hss-25.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-25.localdomain/hss-25.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-25.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.35
+  hss-26:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-26
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-26
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-26:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-26.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-26.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-26.localdomain/hss-26.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-26.localdomain/hss-26.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-26.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.36
+  hss-27:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-27
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-27
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-27:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-27.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-27.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-27.localdomain/hss-27.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-27.localdomain/hss-27.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-27.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.37
+  hss-28:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-28
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-28
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-28:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-28.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-28.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-28.localdomain/hss-28.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-28.localdomain/hss-28.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-28.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.38
+  hss-29:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-29
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-29
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-29:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-29.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-29.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-29.localdomain/hss-29.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-29.localdomain/hss-29.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-29.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.39
+  hss-30:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-30
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-30
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-30:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-30.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-30.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-30.localdomain/hss-30.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-30.localdomain/hss-30.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-30.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.40
+  hss-31:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-31
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-31
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-31:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-31.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-31.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-31.localdomain/hss-31.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-31.localdomain/hss-31.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-31.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.41
+  hss-32:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-32
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-32
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-32:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-32.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-32.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-32.localdomain/hss-32.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-32.localdomain/hss-32.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-32.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.42
+  hss-33:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-33
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-33
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-33:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-33.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-33.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-33.localdomain/hss-33.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-33.localdomain/hss-33.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-33.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.43
+  hss-34:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-34
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-34
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-34:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-34.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-34.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-34.localdomain/hss-34.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-34.localdomain/hss-34.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-34.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.44
+  hss-35:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-35
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-35
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-35:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-35.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-35.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-35.localdomain/hss-35.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-35.localdomain/hss-35.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-35.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.45
+  hss-36:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-36
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-36
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-36:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-36.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-36.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-36.localdomain/hss-36.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-36.localdomain/hss-36.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-36.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.46
+  hss-37:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-37
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-37
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-37:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-37.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-37.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-37.localdomain/hss-37.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-37.localdomain/hss-37.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-37.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.47
+  hss-38:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-38
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-38
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-38:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-38.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-38.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-38.localdomain/hss-38.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-38.localdomain/hss-38.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-38.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.48
+  hss-39:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-39
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-39
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-39:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-39.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-39.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-39.localdomain/hss-39.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-39.localdomain/hss-39.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-39.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.49
+  hss-40:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: hss-40
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=hss-40
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+    volumes:
+      - /var/log/zcore/mme-40:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/hss-40.conf:/etc/freeDiameter/hss.conf
+      - /etc/zcore/docker/hss-40.yaml:/root/zcore/install/etc/open5gs/hss.yaml
+      - /etc/freeDiameter/tls/hss-40.localdomain/hss-40.localdomain.crt:/root/zcore/install/etc/freeDiameter/hss.cert.pem
+      - /etc/freeDiameter/tls/hss-40.localdomain/hss-40.localdomain.key:/root/zcore/install/etc/freeDiameter/hss.key.pem
+      - /etc/freeDiameter/tls/hss-40.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.100.50
+
+
+  mme-1:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: mme-1
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=mme-1
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    depends_on:
+      - hss-1
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+      - "36412/sctp"
+      - "2123/udp"
+      - "6001/tcp"
+      - "6002/tcp"
+    volumes:
+      - /var/log/zcore/mme-1:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/mme-1.conf:/etc/freeDiameter/mme.conf
+      - /etc/zcore/docker/mme-1.yaml:/root/zcore/install/etc/open5gs/mme.yaml
+      - ./mme/recovery_counter.txt:/etc/recovery_counter.txt
+      - /etc/freeDiameter/tls/mme-1.localdomain/mme-1.localdomain.crt:/root/zcore/install/etc/freeDiameter/mme.cert.pem
+      - /etc/freeDiameter/tls/mme-1.localdomain/mme-1.localdomain.key:/root/zcore/install/etc/freeDiameter/mme.key.pem
+      - /etc/freeDiameter/tls/mme-1.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.10.11
+      s11:
+        ipv4_address: 10.200.10.11
+
+  mme-2:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: mme-2
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=mme-2
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    depends_on:
+      - hss-2
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+      - "36412/sctp"
+      - "2123/udp"
+      - "6001/tcp"
+      - "6002/tcp"
+    volumes:
+      - /var/log/zcore/mme-2:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/mme-2.conf:/etc/freeDiameter/mme.conf
+      - /etc/zcore/docker/mme-2.yaml:/root/zcore/install/etc/open5gs/mme.yaml
+      - ./mme/recovery_counter.txt:/etc/recovery_counter.txt
+      - /etc/freeDiameter/tls/mme-2.localdomain/mme-2.localdomain.crt:/root/zcore/install/etc/freeDiameter/mme.cert.pem
+      - /etc/freeDiameter/tls/mme-2.localdomain/mme-2.localdomain.key:/root/zcore/install/etc/freeDiameter/mme.key.pem
+      - /etc/freeDiameter/tls/mme-2.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.10.12
+      s11:
+        ipv4_address: 10.200.10.12
+
+  mme-3:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: mme-3
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=mme-3
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    depends_on:
+      - hss-3
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+      - "36412/sctp"
+      - "2123/udp"
+      - "6001/tcp"
+      - "6002/tcp"
+    volumes:
+      - /var/log/zcore/mme-3:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/mme-3.conf:/etc/freeDiameter/mme.conf
+      - /etc/zcore/docker/mme-3.yaml:/root/zcore/install/etc/open5gs/mme.yaml
+      - ./mme/recovery_counter.txt:/etc/recovery_counter.txt
+      - /etc/freeDiameter/tls/mme-3.localdomain/mme-3.localdomain.crt:/root/zcore/install/etc/freeDiameter/mme.cert.pem
+      - /etc/freeDiameter/tls/mme-3.localdomain/mme-3.localdomain.key:/root/zcore/install/etc/freeDiameter/mme.key.pem
+      - /etc/freeDiameter/tls/mme-3.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.10.13
+      s11:
+        ipv4_address: 10.200.10.13
+
+  mme-4:
+    image: reg.zcore.local/zcore/sctp-lb:no-recovery-counter
+    container_name: mme-4
+    restart: unless-stopped
+    environment:
+      - COMPONENT_NAME=mme-4
+      - TZ=Asia/Tehran
+    env_file:
+      - .env
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    depends_on:
+      - hss-4
+    expose:
+      - "3868/udp"
+      - "3868/tcp"
+      - "3868/sctp"
+      - "5868/udp"
+      - "5868/tcp"
+      - "5868/sctp"
+      - "36412/sctp"
+      - "2123/udp"
+      - "6001/tcp"
+      - "6002/tcp"
+    volumes:
+      - /var/log/zcore/mme-4:/root/zcore/install/var/log/open5gs
+      - /etc/freeDiameter/mme-4.conf:/etc/freeDiameter/mme.conf
+      - /etc/zcore/docker/mme-4.yaml:/root/zcore/install/etc/open5gs/mme.yaml
+      - ./mme/recovery_counter.txt:/etc/recovery_counter.txt
+      - /etc/freeDiameter/tls/mme-4.localdomain/mme-4.localdomain.crt:/root/zcore/install/etc/freeDiameter/mme.cert.pem
+      - /etc/freeDiameter/tls/mme-4.localdomain/mme-4.localdomain.key:/root/zcore/install/etc/freeDiameter/mme.key.pem
+      - /etc/freeDiameter/tls/mme-4.localdomain/rootCA.crt:/root/zcore/install/etc/freeDiameter/cacert.pem
+    networks:
+      om:
+        ipv4_address: 10.30.10.14
+      s11:
+        ipv4_address: 10.200.10.14
+networks:
+  om:
+    name: om
+    driver: bridge
+    driver_opts:
+      parent: ens8
+    ipam:
+      config:
+        - subnet: 10.30.10.0/16
+  s11:
+    name: s11
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.200.10.0/24
+

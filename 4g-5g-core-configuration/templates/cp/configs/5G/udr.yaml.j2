@@ -1,0 +1,27 @@
+db_uri: mongodb://{{ mongodb.addr }}/{{ mongodb.db }}
+
+logger:
+    file: {{ default_core_log_dir_5g }}/udr.log
+
+udr:
+    sbi:
+      - addr: {{ udr.sbi }}
+        port: 7777
+#nrf:
+#    sbi:
+#      - addr:
+#         - {{ nrf.sbi }}
+#       port: 7777
+
+scp:
+    sbi:
+      - addr: {{ scp.sbi }}
+        port: 7777
+parameter:
+max:
+  ue: {{ max.ue }}
+  peer: {{ max.peer }}
+pool:
+sockopt:
+sctp:
+time:

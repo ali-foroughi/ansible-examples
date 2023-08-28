@@ -1,0 +1,19 @@
+[Unit]
+Description=upf spgw1 Service
+#After=rxtx.service
+#BindsTo=rxtx.service
+#PartOf=rxtx.service
+
+[Service]
+Type=simple
+LimitCORE=infinity
+Restart=always
+RestartSec=10s
+ExecStart=/usr/bin/zcore-upfd-dpdk -c /etc/zcore/upf_dpdk.yaml
+#StandardOutput=file:/var/log/open5gs
+#StandardError=file:/dev/null
+#ExecStop=/opt/myapp/B_service.sh -a stop
+
+[Install]
+WantedBy=multi-user.target
+

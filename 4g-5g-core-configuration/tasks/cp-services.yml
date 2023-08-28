@@ -1,0 +1,83 @@
+---
+# tasks file for services
+
+- name: Copy 4G systemd files to /etc/systemd/system
+  ansible.builtin.copy:
+    src: roles/services/templates/systemd/4G/
+    dest: /etc/systemd/system
+  ignore_errors: false
+  when:
+    - create_service_files == "true"
+    - is_4g == "true"
+
+- name: Copy 5G systemd files to /etc/systemd/system
+  ansible.builtin.copy:
+    src: roles/services/templates/systemd/5G/
+    dest: /etc/systemd/system
+  ignore_errors: false
+  when:
+    - create_service_files == "true"
+    - is_4g == "false"
+
+- name: Gather facts about services
+  ansible.builtin.service_facts:
+
+- name: Start 4G services
+  ansible.builtin.systemd:
+    state: restarted
+    name: "{{ item }}"
+  with_items:
+    - zcore-hssd.service
+    - zcore-mmed.service
+  when:
+    - is_4g == "true"
+    - start_services == "true"
+
+- name: Start 5G services
+  ansible.builtin.systemd:
+    state: restarted
+    name: "{{ item }}"
+  with_items:
+    - neon-amfd
+    - neon-ausfd
+    - neon-bsfd
+    - neon-nrfd
+    - neon-nssfd
+    - neon-pcfd
+    - neon-smfd
+    - neon-udmd
+    - neon-udrd
+    - neon-scpd
+  when:
+    - is_4g == "false"
+    - start_services == "true"
+
+- name: Stop 4G services
+  ansible.builtin.systemd:
+    state: stopped
+    name: "{{ item }}"
+  with_items:
+    - zcore-hssd.service
+    - zcore-mmed.service
+  when:
+    - is_4g == "true"
+    - stop_services == "true"
+
+- name: Stop 5G services
+  ansible.builtin.systemd:
+    state: stopped
+    name: "{{ item }}"
+  with_items:
+    - neon-amfd
+    - neon-ausfd
+    - neon-bsfd
+    - neon-nrfd
+    - neon-nssfd
+    - neon-pcfd
+    - neon-smfd
+    - neon-udmd
+    - neon-udrd
+    - neon-scpd
+  when:
+    - is_4g == "false"
+    - stop_services == "true"

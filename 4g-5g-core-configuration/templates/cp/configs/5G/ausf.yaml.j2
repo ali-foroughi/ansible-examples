@@ -1,0 +1,35 @@
+logger:
+    file: {{ default_core_log_dir_5g }}/ausf.log
+
+tls:
+    enabled: {{ tls.enabled }}
+    server:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/ausf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/ausf.crt
+    client:
+      cacert: {{ default_core_configs_dir_5g }}/tls/ca.crt
+      key: {{ default_core_configs_dir_5g }}/tls/ausf.key
+      cert: {{ default_core_configs_dir_5g }}/tls/ausf.crt
+
+ausf:
+    sbi:
+      - addr: {{ ausf.sbi }}
+        port: 7777
+#nrf:
+#    sbi:
+#      - addr:
+#          - {{ nrf.sbi }}
+#        port: 7777
+
+scp:
+    sbi:
+      - addr: {{ scp.sbi }}
+        port: 7777
+
+parameter:
+max:
+  ue: {{ max.ue }}
+  peer: {{ max.peer }}
+pool:
+time:

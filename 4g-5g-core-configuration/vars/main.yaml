@@ -1,0 +1,138 @@
+---
+# defaults file for build
+
+
+http_proxy: http://172.17.93.162:8888     # HTTP/HTTPS proxy address for downloading packages + build
+
+
+###### shared defaults ######
+install_dependencies: "true"
+use_apt_http_proxy: "false"
+default_build_dir: /root/zcore                        # The source code directory
+default_binaries_dir: /usr/bin
+
+###### Defaults for control plane configuration ######
+reboot_after_pkg_installation: "false"
+build_core: "false"
+copy_binaries_after_build: "false"
+
+###### Defaults for Data plane configuration ######
+enable_dns: "false"
+reboot_after_grub_update: "true"
+configure_hugepages: "true"
+build_dpdk: "true"
+start_services: "false"
+configure_spgw_config: "true"
+default_dp_configs_dir: /etc/zcore
+yaml_files_dir_dp: templates/dp/configs
+systemd_files_dir_dp: templates/dp/systemd
+
+###### Default directories for control plane ######
+default_core_log_dir: /var/log/zcore
+default_core_log_dir_5g: /var/log/neon
+default_freediameter_dir: /etc/freeDiameter
+default_freediameter_lib_dir: /lib/x86_64-linux-gnu/freeDiameter
+default_core_configs_dir: /etc/zcore                  # Where YAML files should be stored for 4G
+default_core_configs_dir_5g: /etc/neon                # Where YAML files should be stored for 5G
+default_binaries_backup_dir: /usr/bin/backup          # Directory for backing up old binaries         
+create_and_copy_config_files: "true"
+yaml_files_dir_4g: templates/cp/configs/4G            # YAML templates 
+yaml_files_dir_5g: templates/cp/configs/5G            # YAML templates 
+freediameter_files_dir: templates/cp/freeDiameter
+
+
+###### Modules configuration ######
+
+tls:
+  enabled: "no"
+
+mongodb:
+  addr: 172.20.15.75
+  db: open5gs
+
+hss: 127.0.0.8
+pcrf: 127.0.0.9
+
+ausf:
+  sbi: 127.0.0.11
+
+bsf:
+  sbi: 127.0.0.15
+
+nssf:
+  sbi: 127.0.0.14
+  nsi: 127.0.0.10
+
+pcf:
+  sbi: 127.0.0.13
+
+smf:
+  sbi: 127.0.0.4
+  pfcp: 127.0.0.4
+  gtpc: 127.0.0.4
+  gtpu: 127.0.0.4
+  metrics: 127.0.0.4
+  subnet: 10.45.0.1/24
+  dnn: internet
+
+nrf:
+  sbi: 127.0.0.10
+
+upf:
+  pfcp: 10.30.0.200
+  gtpu: 127.0.0.7
+  subnet: 10.45.0.1/24
+  dnn: internet
+  spgw_name: spgw1
+
+sgwc:
+  gtpc: 127.0.0.3
+  pfcp: 127.0.0.3
+  apn: internet
+
+sgwu:
+  pfcp: 127.0.0.6
+  gtpu: 127.0.0.6
+  spgw_name: spgw1
+
+mme:
+  s1ap: 127.0.0.2
+  gtpc: 127.0.0.2
+  s10: 127.0.0.2
+  mcc: 999
+  mnc: 99
+  gid: 2
+  tac: 1
+  mme_code: 1
+  name: zcore-mme
+
+amf:
+  sbi: 127.0.0.5
+  ngap: 10.20.0.100
+  mcc: 432
+  mnc: 45
+  region: 2
+  set: 1
+  tac: 1
+  sst: 1
+  name: zcore-amf
+
+
+udm:
+  sbi: 127.0.0.12
+
+udr:
+  sbi: 127.0.0.20
+
+scp:
+  sbi: 127.0.1.10
+
+
+dns:
+  ns1: 8.8.8.8
+  ns2: 8.8.4.4
+
+max:
+  ue: 16384
+  peer: 256
+  gnb: 16384

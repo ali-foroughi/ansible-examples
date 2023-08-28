@@ -1,0 +1,16 @@
+[Unit]
+Description=Zcore MME Daemon
+After=networking.service
+
+[Service]
+Type=simple
+
+Restart=always
+LimitCORE=infinity
+ExecStart=/usr/bin/zcore-mmed -c /etc/zcore/mme.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

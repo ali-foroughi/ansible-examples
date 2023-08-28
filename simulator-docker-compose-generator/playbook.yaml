@@ -1,0 +1,19 @@
+- name: Configure Docker compose for 4G Simulator
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+    - vars/main.yaml
+  tasks:
+    - name: Initialize the IMSI_PREFIX
+      set_fact:
+        imsi_prefix: "{{ imsi_prefix }}"
+        imsi_prefix_values: []
+
+    - name: Generate IMSI_PREFIX values for each loop iteration
+      set_fact:
+        imsi_prefix: "{{ (imsi_prefix|int + end_index|int) }}"
+        imsi_prefix_values: "{{ imsi_prefix_values + [imsi_prefix|int] }}"
+      loop: "{{ range(container_instances|int) | list }}"
+
+    - name: Configure docker compose file
+      import_tasks: tasks/generate-compose.yaml

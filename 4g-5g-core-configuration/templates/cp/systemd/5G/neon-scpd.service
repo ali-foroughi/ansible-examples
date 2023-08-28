@@ -1,0 +1,14 @@
+[Unit]
+Description=neon SCP Daemon
+
+[Service]
+Type=simple
+
+Restart=always
+ExecStart=/usr/bin/neon-scpd -c /etc/neon/scp.yaml
+RestartSec=2
+RestartPreventExitStatus=1
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

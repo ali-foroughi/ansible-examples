@@ -1,0 +1,11 @@
+[Unit]
+Description=Zcore network config
+After=networking.service
+
+[Service]
+Type=simple
+
+ExecStart=/opt/script/ogstun.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+container_instances: 200
+start_index: 1
+end_index: 100
+imsi_prefix: 466039999990000
+
+#constants
+ENB_IP: 172.17.92.7
+MME_IP: 172.17.93.48
+APN: srv18
+KI: fc29d6788bd254f621a4fb301c06bf5d63536a
+OPC: 03f3dd89bfbd7abb5d3fbab0ba
+TAC_1: 1
+ENB_NAME: TEST7113
+
+image_name: reg.zcore.local/4g-simulator/4g-simulator:1.4
+docker_compose_file: "generated-docker-compose.yaml"

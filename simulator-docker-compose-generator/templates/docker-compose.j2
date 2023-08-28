@@ -1,0 +1,47 @@
+version: '3.3'
+services:
+{% for i in range(1, container_instances + 1) %}
+  sim{{ i }}:
+    image: {{ image_name }}
+    container_name: sim{{ i }}
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Tehran
+      - PLMN=46603
+      - APN={{ APN }}
+      - START_INDEX={{ start_index }}
+      - END_INDEX={{ end_index }}
+      - ENB_ID={{ i }}
+      - ENB_IP={{ ENB_IP }}
+      - MME_IP={{ MME_IP }}
+      - KI={{ KI }}
+      - OPC={{ OPC }}
+      - TAC_1={{ TAC_1 }}
+      - ENB_NAME={{ ENB_NAME }}
+      - IMSI_PREFIX={{ imsi_prefix_values[i-1] }}
+      - TUN_ID={{ i }}
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/log/sim/sim{{ i }}:/var/log
+    ulimits:
+      core:
+        soft: -1
+        hard: -1
+    networks:
+      om:
+        ipv4_address: 10.30.10.100
+{% endfor %}
+
+networks:
+  om:
+    name: om
+    driver: bridge
+    driver_opts:
+      parent: ens8
+    ipam:
+      config:
+        - subnet: 10.30.10.0/16

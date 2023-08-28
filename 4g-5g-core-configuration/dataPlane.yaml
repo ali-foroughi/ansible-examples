@@ -1,0 +1,59 @@
+- name: Configure dataplane server
+  hosts: dp
+  gather_facts: yes
+  vars_files:
+    - vars/main.yaml
+  tasks:
+    - name: Install package dependencies and configure Hugepages
+      import_tasks: tasks/dp-install-depends.yml
+      vars:
+        check_dns: "false"
+        install_dependencies: "false"
+        use_http_proxy: "false"
+        configure_hugepages: "false"
+        reboot_after_grub_update: "false"
+
+    - name: Build, deploy and configure zcore
+      import_tasks: tasks/dp-build.yml
+      vars:
+        build_dpdk: "false"
+        start_services: "false"
+        configure_spgw_config: "false"
+        create_dp_config_files: "false"
+
+        is_4g: "false"
+        spgw_name: spgw1
+        ul_if_name: ens1f1                     #Uplink interface name (N6)
+        ul_if_pci: "0000:05:00.1"             #Uplink interface PCI number
+        ul_if_ip: 10.45.0.100                 #Uplink interface IP
+        ul_if_mask: 24                        #Uplink interface netmask
+        ul_if_gw_mac: 30:b6:4f:63:50:82       #Uplink interface gateway MAC address
+
+        dl_if_name: ens1f0                    #Downlink interface name (N3)
+        dl_if_pci: "0000:05:00.0"             #Downlink interface PCI number
+        dl_if_ip: 10.30.0.10                #Downlink interface IP
+        dl_if_mask: 16                        #Downlink interface netmask
+        dl_if_gw_mac: 30:b6:4f:63:50:82       #Downlink interface gateway MAC address
+
+        mongodb:
+          addr: 172.20.15.75
+        smf:
+          sbi: 127.0.0.4
+          pfcp: 127.0.0.4
+          gtpc: 127.0.0.4
+          gtpu: 127.0.0.4
+          subnet: 10.45.0.1/24
+          dnn: internet
+        upf:
+          pfcp: 127.0.0.7
+          gtpu: 10.30.0.100
+          subnet: 10.45.0.1/24
+          dnn: internet
+          spgw_name: spgw1
+        sgwc:
+          gtpc: 127.0.0.3
+          pfcp: 127.0.0.3
+        sgwu:
+          pfcp: 127.0.0.6
+          gtpu: 127.0.0.6
+          spgw_name: spgw1
